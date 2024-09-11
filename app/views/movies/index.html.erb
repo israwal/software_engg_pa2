@@ -4,13 +4,20 @@
 
 <h1>Movies</h1>
 
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Rating</th>
+    <th>Release Date</th>
+  </tr>
+
 <div id="movies">
+
   <% @movies.each do |movie| %>
     <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
   <% end %>
 </div>
+
+</table>
 
 <%= link_to "New movie", new_movie_path %>
