@@ -5,11 +5,19 @@
 <h1>Movies</h1>
 
 <table border="1">
-  <tr>
-    <th>Title</th>
-    <th>Rating</th>
-    <th>Release Date</th>
-  </tr>
+  <thead>
+    <tr>
+      <th class="<%= session[:sort] == 'title' ? (session[:direction] == 'asc' ? 'current-asc' : 'current-desc') : '' %>">
+        <%= sortable "title", "Title" %>
+      </th>
+      <th class="<%= session[:sort] == 'rating' ? (session[:direction] == 'asc' ? 'current-asc' : 'current-desc') : '' %>">
+        <%= sortable "rating", "Rating" %>
+      </th>
+      <th class="<%= session[:sort] == 'release_date' ? (session[:direction] == 'asc' ? 'current-asc' : 'current-desc') : '' %>">
+        <%= sortable "release_date", "Release Date" %>
+      </th>
+    </tr>
+  </thead>
 
 <div id="movies">
 

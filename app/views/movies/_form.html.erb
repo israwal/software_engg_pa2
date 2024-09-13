@@ -1,3 +1,5 @@
+<% mode = local_assigns[:mode] || "create" %>
+
 <%= form_with(model: movie) do |form| %>
   <% if movie.errors.any? %>
     <div style="color: red">
@@ -11,27 +13,27 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="group-form">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="group-form">
     <%= form.label :rating, style: "display: block" %>
     <%= form.text_field :rating %>
   </div>
 
-  <div>
+  <div class="group-form">
     <%= form.label :description, style: "display: block" %>
     <%= form.text_field :description %>
   </div>
 
-  <div>
+  <div class="group-form">
     <%= form.label :release_date, style: "display: block" %>
     <%= form.text_field :release_date %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit mode == "edit" ? "Update Movie" : "Create Movie", class: mode == "edit" ? "edit_button" : "create_button" %>
   </div>
 <% end %>

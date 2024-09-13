@@ -1,8 +1,20 @@
-<div id="<%= dom_id movie %>">
-    <tr>
-      <td><%= movie.title %></td>
-      <td><%= movie.rating %></td>
-      <td><%= movie.release_date %></td>
-    </tr>
+<% view = local_assigns[:view] || "index" %>
 
-</div>
+<% if view == "show" %>
+  <div id="<%= dom_id(movie) %>">
+    <h1><%= movie.title %></h1>
+    <p><strong>Rating:</strong> <%= movie.rating %></p>
+    <p><strong>Release Date:</strong> <%= movie.release_date %></p>
+  </div>
+<% else %>
+  <div id="<%= dom_id movie %>">
+      <tr>
+        <td class="<%= session[:sort] == 'title' ? (session[:direction] == 'asc' ? 'current-asc' : 'current-desc') : '' %>">
+        <%= link_to movie.title, movie_path(movie) %>
+        </td>
+        <td class="<%= session[:sort] == 'rating' ? (session[:direction] == 'asc' ? 'current-asc' : 'current-desc') : '' %>"><%= movie.rating %></td>
+        <td class="<%= session[:sort] == 'release_date' ? (session[:direction] == 'asc' ? 'current-asc' : 'current-desc') : '' %>"><%= movie.release_date %></td>
+      </tr>
+  </div>
+<% end %>
+

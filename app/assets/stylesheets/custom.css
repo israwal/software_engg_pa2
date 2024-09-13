@@ -1,0 +1,66 @@
+th.current {
+    background-color: #5a96df;
+    font-weight: bold;
+  }
+
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+
+th.current-asc, td.current-asc {
+  background-color: #a5d2a9;
+}
+
+
+th.current-desc, td.current-desc {
+  background-color: #d5afb5;
+}
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+.submit_button {
+  background-color: #73c474; 
+  color: #ffffff; 
+  padding: 15px 20px;
+  font-size: 12px; 
+  font-weight: bold;
+}
+
+.edit_button {
+  background-color: #cb6042;
+  color: #ffffff; 
+  padding: 15px 20px;
+  font-size: 12px; 
+  font-weight: bold;
+}
+
+.group-form {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  align-items: justify;
+}
+
+.back_button {
+  background-color: #42cbb2; 
+  color: #ffffff; 
+  padding: 15px 20px;
+  font-size: 12px; 
+  font-weight: bold;
+}
+
+.create_button {
+  background-color: #65a478; 
+  color: #ffffff; 
+  padding: 15px 20px;
+  font-size: 12px; 
+  font-weight: bold;
+}
